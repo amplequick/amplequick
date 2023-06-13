@@ -258,31 +258,71 @@
             </div>
 
           </div>
+<div class="col-lg-6">
+  <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeDO9XDY7J1Mx9LJFSZAj0ocM2cdQuB0V0J7wecnJx1yEE8eA/formResponse" method="post" role="form" class="php-email-form" onsubmit="submitForm(event)">
+    <div class="row">
+      <div class="col-md-6 form-group">
+        <input type="text" name="entry.368860112" class="form-control" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="col-md-6 form-group mt-3 mt-md-0">
+        <input type="email" class="form-control" name="entry.1210155425" id="email" placeholder="Your Email" required>
+      </div>
+    </div>
+    <div class="form-group mt-3">
+      <input type="text" class="form-control" name="entry.458973365" id="subject" placeholder="Subject" required>
+    </div>
+    <div class="form-group mt-3">
+      <textarea class="form-control" name="entry.920517997" rows="6" placeholder="Message" required></textarea>
+    </div>
+    <div class="my-3">
+      <div class="loading">Loading</div>
+      <div class="error-message" style="display: none;"></div>
+      <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
+    </div>
+    <div class="text-center"><button type="submit">Send Message</button></div>
+  </form>
+</div>
 
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
+<script>
+  function submitForm(event) {
+  event.preventDefault(); // Prevent the form from submitting normally
+
+  var form = event.target;
+  var formData = new FormData(form);
+
+  var successMessage = document.querySelector('.sent-message');
+  var errorMessage = document.querySelector('.error-message');
+
+  var loadingMessage = document.querySelector('.loading');
+  loadingMessage.style.display = 'block';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+    .then(function(response) {
+      loadingMessage.style.display = 'none';
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
+      } else {
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'block';
+      }
+    })
+    .catch(function(error) {
+      loadingMessage.style.display = 'none';
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'block';
+    });
+}
+fetch(form.action, {
+  method: 'POST',
+  body: formData,
+  mode: 'no-cors'
+})
+</script>
+        
 
         </div>
 
