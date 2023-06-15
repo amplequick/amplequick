@@ -175,7 +175,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">Article writing</a></h4>
+              <h4 class="title"><a href=""> Article writing / correction </a></h4>
              
             </div>
           </div>
@@ -183,14 +183,14 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Manuscript Publishing</a></h4>
+              <h4 class="title"><a href="">Manuscript Publishing / Revising </a></h4>
             </div>
           </div>
 
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">Thesis Writing</a></h4>
+              <h4 class="title"><a href=""> Thesis Writing / correction </a></h4>
             </div>
           </div>
 
@@ -283,52 +283,8 @@
   <div class="text-center"><button type="submit">Send Message</button></div>
 </form>
 </div>
-
-<script>
-  function submitForm(event) {
-  event.preventDefault(); // Prevent the form from submitting normally
-
-  var form = event.target;
-  var formData = new FormData(form);
-
-  var successMessage = document.querySelector('.sent-message');
-  var errorMessage = document.querySelector('.error-message');
-
-  var loadingMessage = document.querySelector('.loading');
-  loadingMessage.style.display = 'block';
-
-  fetch(form.action, {
-    method: 'POST',
-    body: formData
-  })
-    .then(function(response) {
-      loadingMessage.style.display = 'none';
-      if (response.ok) {
-        successMessage.style.display = 'block';
-        errorMessage.style.display = 'none';
-      } else {
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'block';
-      }
-    })
-    .catch(function(error) {
-      loadingMessage.style.display = 'none';
-      successMessage.style.display = 'none';
-      errorMessage.style.display = 'block';
-    });
-}
-fetch(form.action, {
-  method: 'POST',
-  body: formData,
-  mode: 'no-cors'
-})
-</script>
-        
-
-        </div>
-
-      </div>
-    </section><!-- End Contact Me Section -->
+</div>
+  </section><!-- End Contact Me Section -->
 
   </main><!-- End #main -->
 
