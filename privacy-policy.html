@@ -156,7 +156,13 @@
 <p>If you have any questions about this Policy or other privacy concerns, you can also email us at http://amplequickpublications.live</p>
 
 
-
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+    <h3>Contact Us</h3>
+    <p>amplequickpublications@gmail.com</p>
+	<p id="address" class="hidden">12, Main road, Clive street, Cuddalore OT, 607003</p>
+    <span class="arrow" onclick="toggleAddress()">&#x25BC;</span>
+                </div>
 
 
 
@@ -187,7 +193,12 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+<script>
+    function toggleAddress() {
+      var address = document.getElementById('address');
+      address.classList.toggle('hidden');
+    }
+  </script>
 </body>
 
 </html>
